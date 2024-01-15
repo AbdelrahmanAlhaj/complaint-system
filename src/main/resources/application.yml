@@ -1,0 +1,29 @@
+server:
+  port: 8091
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/compliant
+    username: postgres
+    password: 
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+    database: postgresql
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+
+jwt:
+  token: b381dd2457b3534c429808bf2c8f5eb49a6f59eece14ecd448c4c8ab103a5115
+
+#logging:
+#  level:
+#    org.springframework: INFO
+#    com.complaint: INFO
+#  pattern:
+#    console: "%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"
+
