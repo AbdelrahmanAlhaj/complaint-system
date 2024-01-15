@@ -7,8 +7,6 @@ import com.complaint.user.domain.dto.AuthenticationResponse;
 import com.complaint.user.domain.dto.UserDTO;
 import com.complaint.user.service.UserService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
@@ -28,7 +26,7 @@ public class UserController extends BaseController {
     @GetMapping("current-user")
     public ResponseEntity<UserDTO> fetchCurrentUser() {
         UserDTO userDTO = userService.fetchCurrentUser();
-        return handleResponse(userDTO, HttpStatus.OK);
+        return handleResponse(userDTO);
     }
 
     @GetMapping("logout")

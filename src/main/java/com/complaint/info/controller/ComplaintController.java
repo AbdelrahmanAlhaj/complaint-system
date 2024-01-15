@@ -10,7 +10,6 @@ import com.complaint.info.service.ComplaintService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
@@ -31,12 +30,12 @@ public class ComplaintController extends BaseController {
     @GetMapping("/{complaintId}")
     private ResponseEntity<ComplaintDTO> fetchComplaint(@PathVariable("complaintId") Long complaintId) {
         ComplaintDTO complaintDTO = complaintService.fetchComplaint(complaintId);
-        return handleResponse(complaintDTO, HttpStatus.OK);
+        return handleResponse(complaintDTO);
     }
 
     @GetMapping("/list")
     public ResponseEntity<Page<ComplaintDTO>> fetchComplaints(ComplaintFilter complaintFilter, Pageable pageable) {
-        return handleResponse(complaintService.fetchComplaintList(complaintFilter, pageable), HttpStatus.OK);
+        return handleResponse(complaintService.fetchComplaintList(complaintFilter, pageable));
     }
 
     @PostMapping("/{complaintId}/update-status")

@@ -6,7 +6,6 @@ import com.complaint.role.domain.dto.RoleDTO;
 import com.complaint.role.service.RoleService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
@@ -34,7 +33,7 @@ public class RolesController extends BaseController {
     public ResponseEntity<List<RoleDTO>> fetchRole(
             @PathVariable("userId") Long userId) {
         log.info(String.format("fetch user %s roles", userId));
-        return handleResponse(roleService.fetchUserRole(userId), HttpStatus.OK);
+        return handleResponse(roleService.fetchUserRole(userId));
     }
 
     @PostMapping("/")

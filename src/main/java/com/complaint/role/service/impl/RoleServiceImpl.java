@@ -1,6 +1,5 @@
 package com.complaint.role.service.impl;
 
-import com.complaint.role.domain.Role;
 import com.complaint.role.domain.dto.RoleDTO;
 import com.complaint.role.domain.entity.RoleEntity;
 import com.complaint.role.domain.mapper.RoleMapper;

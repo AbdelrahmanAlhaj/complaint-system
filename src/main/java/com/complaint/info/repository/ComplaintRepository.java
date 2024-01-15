@@ -11,7 +11,7 @@ public interface ComplaintRepository extends JpaRepository<ComplaintEntity, Long
     @Transactional
     @Modifying
     @Query("update ComplaintEntity c set c.status = ?1 where c.id = ?2")
-    int updateStatus(ComplaintStatus status, Long id);
+    void updateStatus(ComplaintStatus status, Long id);
 
 
 
