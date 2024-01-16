@@ -44,6 +44,14 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    public UserEntity fetchCurrentUserEntity() {
+        String currentUsername = LoginUtil.getCurrentUsername();
+        return userRepository.findByUsername(currentUsername)
+                .orElseThrow(() -> new EntityNotFoundException(
+                        String.format("User with username %s Not found", currentUsername)));
+    }
+
+    @Override
     public AuthenticationResponse authenticate(AuthenticationRequest request) {
         Authentication authentication =
                 UsernamePasswordAuthenticationToken.unauthenticated(request.getUsername(), request.getPassword());

@@ -24,7 +24,7 @@ public class ComplaintEntity extends BaseEntity {
     @Column(name = "type")
     private String type;
 
-    @Enumerated
+    @Enumerated(EnumType.STRING)
     private ComplaintStatus status;
 
     @Column(name = "description", length = 2000)

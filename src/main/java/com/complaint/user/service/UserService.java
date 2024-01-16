@@ -10,6 +10,8 @@ public interface UserService {
 
     UserDTO fetchCurrentUser();
 
+    UserEntity fetchCurrentUserEntity();
+
     AuthenticationResponse authenticate(AuthenticationRequest request);
 
     UserEntity fetchUserByUserId(Long userId);

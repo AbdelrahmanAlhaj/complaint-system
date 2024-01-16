@@ -14,7 +14,6 @@ public class ComplaintDTO {
 
     @NotEmpty
     private String type;
-    @NotEmpty
     private String status;
     @NotEmpty
     private String description;

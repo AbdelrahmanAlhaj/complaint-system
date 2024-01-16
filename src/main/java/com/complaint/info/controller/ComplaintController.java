@@ -21,14 +21,14 @@ import org.springframework.web.bind.annotation.*;
 public class ComplaintController extends BaseController {
     private final ComplaintService complaintService;
 
-    @PostMapping
+    @PostMapping("/")
     public ResponseEntity<Void> createComplaint(@RequestBody ComplaintDTO complaintDTO) {
         complaintService.createComplaint(complaintDTO);
         return handleCreatedResponse();
     }
 
     @GetMapping("/{complaintId}")
-    private ResponseEntity<ComplaintDTO> fetchComplaint(@PathVariable("complaintId") Long complaintId) {
+    private ResponseEntity<ComplaintDTO> fetchUserComplaint(@PathVariable("complaintId") Long complaintId) {
         ComplaintDTO complaintDTO = complaintService.fetchComplaint(complaintId);
         return handleResponse(complaintDTO);
     }
